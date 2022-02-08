@@ -29,7 +29,6 @@ function duplicateNumbers(arr1, arr2) {
 
 }
 
-console.log(duplicateNumbers(arr1 = [1, 2, 2, 2, 3, 4, 5], arr2 = [1, 2, 6, 7]))
 
 
 module.exports = {

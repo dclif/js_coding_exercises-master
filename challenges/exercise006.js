@@ -72,6 +72,7 @@ const createMatrix = (n, fill) => {
 
 console.log(createMatrix(3, "foo"))
 
+
 /**
  * This function takes an array of staff objects in the format:
  * [

@@ -41,8 +41,8 @@ const {
 
   describe("createMatrix", () => {
     test("returns an array of n arrays, each filled with n items", () => {
-     
-      
+      expect(createMatrix(3,"foo")).toEqual([["foo", "foo", "foo"], ["foo", "foo", "foo"], ["foo", "foo", "foo"]])
+      expect(createMatrix(1, "ShAbBa")).toEqual([["ShAbBa"]])
     })
   })
 

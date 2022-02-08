@@ -16,9 +16,9 @@ const {
 
     describe("createRange", () => {
         test("creates a range of numbers as an array with an incremental step", () => {
-          expect(createRange(3,11,2)).toBe([3, 5, 7, 9, 11]);
-          expect(createRange(9,100,9)).toBe([9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99]);
-          expect(createRange(3,14)).toBe([3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]);
+          expect(createRange(3,11,2)).toEqual([3, 5, 7, 9, 11]);
+          expect(createRange(9,100,9)).toEqual([9, 18, 27, 36, 45, 54, 63, 72, 81, 90, 99]);
+          expect(createRange(3,14)).toEqual([3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]);
         });
         });
 
@@ -45,8 +45,8 @@ const {
                       ]
          },
        ]
-      expect(getScreentimeAlertList(users, "2019-05-04")).toBe(["beth_1234"]);
-      expect(getScreentimeAlertList(users, "2019-06-14")).toBe([]);
+      expect(getScreentimeAlertList(users, "2019-05-04")).toEqual(["beth_1234"]);
+      expect(getScreentimeAlertList(users, "2019-06-14")).toEqual([]);
     });
     });
 
