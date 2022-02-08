@@ -13,8 +13,6 @@ const {
       expect(sumMultiples([5, 3, 7, 8, 1, 10,9, 15])).toBe(42);
       expect(sumMultiples([4, 22, 654, 123, 65, 23, 40, 1])).toBe(882);
     });
-  
-    
   });
 
   describe("isValidDNA", () => {

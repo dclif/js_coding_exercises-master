@@ -1,8 +1,10 @@
 const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
   if (n === undefined) throw new Error("n is required");
-  return nums[nums.indexOf(n)+1]
+  return (nums.indexOf(n) >= 0 && nums.indexOf(n) < nums.length-1) ? nums[nums.indexOf(n)+1] : null
 };
+
+
 
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
@@ -25,8 +27,9 @@ const sumArrays = arrs => {
 
 const arrShift = arr => {
   if (arr === undefined) throw new Error("arr is required");
-  return [arr[arr.length - 1],...arr.slice(1, arr[arr.length -2]),arr[0]]
+  return arr.length < 2 ? arr : [arr[arr.length - 1],...arr.slice(1, arr[arr.length -2]),arr[0]]
 };
+
 
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
@@ -39,11 +42,11 @@ const findNeedle = (haystack, searchTerm) => {
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
   let obj = {};
-  str.split(' ').forEach(x => obj[x] ? obj[x] = obj[x] + 1: obj[x] = 1)
+  str.toLowerCase().replace(/[^\w\s]|_/g, "").split(' ').forEach(x => obj[x] ? obj[x] = obj[x] + 1: obj[x] = 1)
   return obj
-
-
 };
+
+
 
 module.exports = {
   findNextNumber,

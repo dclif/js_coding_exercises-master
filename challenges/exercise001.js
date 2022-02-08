@@ -17,14 +17,17 @@ function generateInitials(firstName, lastName) {
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  return (vatRate / 100 * originalPrice  + originalPrice).toFixed(2)
+  return Math.round((((vatRate / 100) * originalPrice ) + originalPrice)*100) / 100
+  
 }
+
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  return (originalPrice - (reduction / 100 * originalPrice)).toFixed(2)
+  return Math.round((originalPrice - (reduction / 100 * originalPrice))*100) / 100
 }
+
 
 
 function getMiddleCharacter(str) {
@@ -41,7 +44,7 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  return words.split(' ').map(x => x.split('').reverse().join('')).join(' ')
+  return words.map(x => x.split('').reverse().join(''))
 }
 
 
@@ -52,7 +55,7 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  return (scores.reduce((a,b) => a + b) / scores.length).toFixed(2)
+  return Math.round((scores.reduce((a,b) => a + b) / scores.length)*100) / 100
 }
 
 
@@ -64,7 +67,7 @@ function simpleFizzBuzz(n) {
   return n;
 }
 
-console.log(simpleFizzBuzz(15))
+
 
 module.exports = {
   capitalize,

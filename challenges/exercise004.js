@@ -1,7 +1,7 @@
 function findSmallNums(nums) {
   if (!nums) throw new Error("nums is required");
   let res = [];
-  for(i = 0; i < nums.length; i++) {
+  for(let i = 0; i < nums.length; i++) {
     if( nums[i] < 1)
     res.push(nums[i]);
   }
@@ -14,14 +14,15 @@ function findNamesBeginningWith(names, char) {
   if (!names) throw new Error("names is required");
   if (!char) throw new Error("char is required");
   let res = [];
-  for(i = 0; i < names.length; i++){
-    if(names[i][0] === "S"){
+  for(let i = 0; i < names.length; i++){
+    if(names[i][0] === char){
       res.push(names[i])
     }
   }
 
   return res;
 }
+
 
 
 function findVerbs(words) {
@@ -69,11 +70,12 @@ function findSentencesContaining(sentences, str) {
   if (!str) throw new Error("str is required");
   let res = [];
   for(let i = 0; i < sentences.length; i++){
-    if(sentences[i].split(' ').includes(str))res.push(sentences[i]);
+    if(sentences[i].toUpperCase().includes(str.toUpperCase()))res.push(sentences[i])
   }
 
   return res;
 }
+
 
 
 function getLongestSides(triangles) {
