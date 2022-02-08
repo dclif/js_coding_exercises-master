@@ -18,7 +18,7 @@ const sumDigits = n => {
  * @param {Number} end
  * @param {Number} step
  */
-const createRange = (start, end, step) => {
+const createRange = (start, end, step = 1) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
   let res = [];
@@ -26,6 +26,8 @@ const createRange = (start, end, step) => {
   while(i <= end) {res.push(i); i += step}
   return res;
 };
+
+console.log(createRange(3,11,2))
 
 /**
  * This function takes an array of user objects and their usage in minutes of various applications. The format of the data should be as follows:
@@ -59,7 +61,12 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
-  return users.map(x => x.screenTime.filter(x => x.date === date))
+  let users100 = [];
+
+  for(let i = 0; i < users.length ; i++){
+    users[i].screenTime.map(x => x.date === date && Object.values(x.usage).reduce((a,b) => a + b) > 100 ? users100.push(users[i].username) : null)
+  }
+  return users100;
 };
 
 // console.log(getScreentimeAlertList([
@@ -152,11 +159,6 @@ const findWinner = board => {
   return null;
 };
 
-console.log(findWinner( [
-    ["X", "X", "null"],
-    ["null", null, "0"],
-    ["X", null, "0"]
-   ]))
 
 module.exports = {
   sumDigits,

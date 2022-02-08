@@ -35,6 +35,8 @@ const getComplementaryDNA = str => {
 };
 
 
+
+
 /**
  * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
  * @param {Number} n
@@ -66,8 +68,9 @@ const createMatrix = (n, fill) => {
   let i = n;
    while(i > 0){res.push(Array(n).fill(fill)); i--}
  return res;
-  
 };
+
+console.log(createMatrix(3, "foo"))
 
 /**
  * This function takes an array of staff objects in the format:
@@ -87,10 +90,7 @@ const areWeCovered = (staff, day) => {
   return staff.filter(x => x.rota.includes(day)).length >= 3
 };
 
-console.log(areWeCovered([
-  { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
-   { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] }, { name: "Piedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
-  ], "Tuesday"));
+
 
 module.exports = {
   sumMultiples,

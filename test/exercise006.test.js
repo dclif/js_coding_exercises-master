@@ -16,39 +16,38 @@ const {
   });
 
   describe("isValidDNA", () => {
-    test(""), () => {
+    test("returns true/false depending on whether it is a valid DNA string", () => {
       expect(isValidDNA("CGTA")).toBe(true);
       expect(isValidDNA("CGTAA")).toBe(true);
       expect(isValidDNA("CGTAb")).toBe(false);
-    }
-  })
+    })
+  });
 
   describe("getComplementaryDNA", () => {
-    test(""), () => {
+    test("returns a string of the complementary base pairs, either AT or CG", () => {
       expect(getComplementaryDNA("CGTA")).toBe("ATCG");
       expect(getComplementaryDNA("CGTACGTA")).toBe("ATATCGCG");
       expect(getComplementaryDNA("CGTAA")).toBe("Cannot form valid base pairs from input");
-      expect(getComplementaryDNA("CGTAb")).toBe("Cannot form valid base pairs from input");
-    }
-  })
+    })
+  });
 
   describe("isItPrime", () => {
-    test(""), () => {
+    test("returns true/false depending on whether it is a prime number or not", () => {
       expect(isItPrime(7)).toBe(true)
       expect(isItPrime(1)).toBe(false)
       expect(isItPrime(21)).toBe(false)
-    }
+    })
   })
 
   describe("createMatrix", () => {
-    test(""), () => {
-      expect(createMatrix(3, "foo")).toBe([["foo", "foo", "foo"], ["foo", "foo", "foo"], ["foo", "foo", "foo"]]);
-      expect(createMatrix(1, "shabba")).toBe([["shabba"]]);
-    }
+    test("returns an array of n arrays, each filled with n items", () => {
+     
+      
+    })
   })
 
   describe("areWeCovered", () => {
-    test(""), () => {
+    test("return true/false depending on whether three staff available on the given input day", () => {
       expect(areWeCovered([
         { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
          { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] },
@@ -56,6 +55,6 @@ const {
         expect(areWeCovered([
           { name: "Sally", rota: ["Monday", "Tuesday", "Friday"] },
            { name: "Pedro", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] }, { name: "Rudolph", rota: ["Saturday", "Sunday", "Tuesday", "Wednesday"] }
-          ], "Tuesday")).toBe(false)
-    }
+          ], "Tuesday")).toBe(true)
+    })
   })
