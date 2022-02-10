@@ -35,8 +35,8 @@ function splitThatString(string){
 function addressLookUp(user){
     if (!user) throw new Error("user is required");
     // Your solution using optional chaining here!
-    // eslint-disable-next-line no-prototype-builtins
-    return user.hasOwnProperty("address") ? user.address.postcode : undefined;
+    return Object.prototype.hasOwnProperty.call(user, "address") ? user.address.postcode : undefined;
+    
 }
 
 
