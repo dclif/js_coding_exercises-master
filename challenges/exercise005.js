@@ -9,7 +9,7 @@ const findNextNumber = (nums, n) => {
 const count1sand0s = str => {
   if (str === undefined) throw new Error("str is required");
   let obj = {1: 0, 0: 0};
-  [...str].forEach(x => x === "1" ? obj[1]++ : obj[0]++)
+  [...str].forEach(num => num === "1" ? obj[1]++ : obj[0]++)
   return obj;
 };
 
@@ -34,7 +34,7 @@ const arrShift = arr => {
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  return Object.values(haystack).filter(x => typeof x === "string" && x.toUpperCase().includes(searchTerm.toUpperCase())).length > 0
+  return Object.values(haystack).filter(el => typeof el === "string" && el.toUpperCase().includes(searchTerm.toUpperCase())).length > 0
 };
 
 
@@ -42,7 +42,7 @@ const findNeedle = (haystack, searchTerm) => {
 const getWordFrequencies = str => {
   if (str === undefined) throw new Error("str is required");
   let obj = {};
-  str.toLowerCase().replace(/[^\w\s]|_/g, "").split(' ').forEach(x => obj[x] ? obj[x] = obj[x] + 1: obj[x] = 1)
+  str.toLowerCase().replace(/[^\w\s]|_/g, "").split(' ').forEach(word => obj[word] ? obj[word] = obj[word] + 1: obj[word] = 1)
   return obj
 };
 

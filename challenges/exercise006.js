@@ -17,7 +17,7 @@ const sumMultiples = arr => {
  */
 const isValidDNA = str => {
   if (str === undefined) throw new Error("str is required");
-  return [...str].every(x => x === 'C' || x === 'G' || x === 'T' || x === 'A')
+  return [...str].every(el => el === 'C' || el === 'G' || el === 'T' || el === 'A')
 };
 
 
@@ -29,7 +29,7 @@ const isValidDNA = str => {
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
   let obj = {};
-  [...str].forEach(x => obj[x] ? obj[x] = obj[x]+= 1 : obj[x] = 1)
+  [...str].forEach(el => obj[el] ? obj[el] = obj[el]+= 1 : obj[el] = 1)
   if(obj.A === obj.T && obj.G === obj.C) {return "AT".repeat(obj.A).concat("CG".repeat(obj.G))}
   return "Cannot form valid base pairs from input"
 };
@@ -88,7 +88,7 @@ console.log(createMatrix(3, "foo"))
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
-  return staff.filter(x => x.rota.includes(day)).length >= 3
+  return staff.filter(name => name.rota.includes(day)).length >= 3
 };
 
 

@@ -64,7 +64,7 @@ const getScreentimeAlertList = (users, date) => {
   let users100 = [];
 
   for(let i = 0; i < users.length ; i++){
-    users[i].screenTime.map(x => x.date === date && Object.values(x.usage).reduce((a,b) => a + b) > 100 ? users100.push(users[i].username) : null)
+    users[i].screenTime.map(user => user.date === date && Object.values(user.usage).reduce((a,b) => a + b) > 100 ? users100.push(users[i].username) : null)
   }
   return users100;
 };

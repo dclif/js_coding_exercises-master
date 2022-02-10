@@ -44,13 +44,13 @@ function reverseWord(word) {
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  return words.map(x => x.split('').reverse().join(''))
+  return words.map(word => word.split('').reverse().join(''))
 }
 
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  return users.map(x => x.type === "Linux").filter(x => x === true).length
+  return users.map(user => user.type === "Linux").filter(os => os === true).length
 }
 
 function getMeanScore(scores) {
